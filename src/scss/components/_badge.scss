@@ -1,0 +1,22 @@
+// @use "../utils/mixin";
+// @use "../utils/variables" as v;
+
+@use "../utils" as frwd;
+
+.badge {
+  @include frwd.badge-base();
+
+  color: frwd.$badge-cl;
+}
+
+.badge-completed {
+  background-color: frwd.$completed;
+}
+
+.badge-ended {
+  background-color: frwd.$ended;
+}
+
+.badge-active {
+  background-color: frwd.$active;
+}
