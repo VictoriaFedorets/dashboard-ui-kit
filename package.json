@@ -1,11 +1,11 @@
 {
-  "name": "vite-sass-app-template",
+  "name": "dashboard-ui-kit",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/vite-template-sass/",
+    "build": "vite build --base=/dashboard-ui-kit/",
     "preview": "vite preview",
     "watch": "npx vite build --watch"
   },
@@ -27,7 +27,6 @@
     "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
-    "body-scroll-lock": "^4.0.0-beta.0",
     "cross-spawn": "^7.0.6",
     "esbuild": "^0.25.0",
     "got": "^14.4.6",
