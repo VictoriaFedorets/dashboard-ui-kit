@@ -42,6 +42,7 @@
     object-position: top center;
   }
 }
+
 @mixin scroll-bar {
   &::-webkit-scrollbar {
     width: 14px;
@@ -72,13 +73,16 @@
 @mixin ease($ease, $properties...) {
   @if map.has-key(var.$easings, $ease) {
     $ease: map.get(var.$easings, $ease);
-
-    transition: $ease;
   } @else {
-    @warn "The variable $ease is not defined";
+    @warn "The easing `#{$ease}` is not defined";
+    $ease: ease-in-out; // Значення за замовчуванням
   }
 
   @if list.length($properties) > 0 {
     transition-property: $properties;
+    transition-duration: 300ms;
+    transition-timing-function: $ease;
+  } @else {
+    transition: all 300ms $ease;
   }
 }
