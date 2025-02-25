@@ -201,3 +201,162 @@ summary {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.page {
+  min-width: 375px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  padding: 16px;
+  background-color: #1c1c24;
+  -webkit-box-shadow: 0px 1px 0px 0px #292932 inset;
+          box-shadow: 0px 1px 0px 0px #292932 inset;
+}
+
+.main {
+  display: grid;
+  gap: 40px;
+  padding: 16px;
+  grid-template-areas: "welcome" "co-workers" "tasks" "reports";
+}
+
+.btn {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 4px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 8px 12px;
+  color: #fafafb;
+  border-radius: 12px;
+  -webkit-transition-property: background-color, color, -webkit-box-shadow;
+  transition-property: background-color, color, -webkit-box-shadow;
+  -moz-transition-property: background-color, color, box-shadow;
+  transition-property: background-color, color, box-shadow;
+  transition-property: background-color, color, box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 300ms;
+     -moz-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+          transition-timing-function: ease;
+  font: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+.btn .btn-inner {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4285714286;
+  letter-spacing: 0.0357142857;
+}
+.btn .btn-icon {
+  fill: currentColor;
+}
+
+/* ==Primary == */
+.btn--primary {
+  background-color: #f07f2e;
+}
+.btn--primary:active {
+  background-color: #d14a00;
+}
+.btn--primary[disabled] {
+  background-color: #b5b5be;
+}
+
+.welcome {
+  grid-area: welcome;
+}
+
+.co-workers {
+  grid-area: co-workers;
+}
+
+.tasks {
+  grid-area: tasks;
+}
+
+.reports {
+  grid-area: reports;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    gap: 36px;
+    padding: 36px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "welcome welcome" "co-workers co-workers" "tasks reports";
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .page {
+    display: grid;
+    grid-template-columns: 248px 1fr;
+    grid-template-rows: 68px 1fr;
+    grid-template-areas: "sidebar header" "sidebar main";
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .header {
+    grid-area: header;
+    padding: 24px 36px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+            justify-content: space-between;
+  }
+  .main {
+    grid-area: main;
+    grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
+    grid-template-areas: "welcome welcome" "co-workers tasks" "co-workers reports";
+  }
+}
+
+@media only screen and (max-width: 1199.98px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 19, 26, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .sidebar.is-open {
+    opacity: 1;
+    pointer-events: initial;
+    visibility: visible;
+  }
+}
+
+@media (hover: hover) {
+  .btn--primary:hover, .btn--primary:focus {
+    background-color: #f15c27;
+    -webkit-box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
+            box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
+  }
+}
