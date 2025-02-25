@@ -1,7 +1,8 @@
-@if index($btn-types, primary) {
-  /* == Primary == */
-  .btn--primary {
-    background-color: #f07f2e;
+@if index($btn-types, danger) {
+  /* == Danger == */
+
+  .btn--danger {
+    background-color: #fc5a5a;
 
     &:active {
       background-color: #d14a00;

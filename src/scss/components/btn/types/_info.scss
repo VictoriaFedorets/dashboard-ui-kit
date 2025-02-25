@@ -1,16 +1,17 @@
-@if index($btn-types, primary) {
-  /* == Primary == */
-  .btn--primary {
-    background-color: #f07f2e;
+@if index($btn-types, info) {
+  /* == Info == */
+
+  .btn--info {
+    background-color: #4e75ff;
 
     &:active {
-      background-color: #d14a00;
+      background-color: darken(#4e75ff, 10%);
     }
 
     @media (hover: hover) {
       &:hover,
       &:focus {
-        background-color: #f15c27;
+        background-color: lighten(#4e75ff, 10%);
         box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
       }
     }

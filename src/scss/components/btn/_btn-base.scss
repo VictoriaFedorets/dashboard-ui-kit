@@ -26,8 +26,8 @@
   .btn-inner {
     font-size: $btn-text-size;
     font-weight: $btn-text-weight;
-    line-height: $btn-line-height / $btn-text-size;
-    letter-spacing: $btn-text-spacing / $btn-text-size;
+    line-height: calc($btn-line-height / $btn-text-size);
+    letter-spacing: #{calc($btn-text-spacing / $btn-text-size)}em;
   }
 
   .btn-icon {
