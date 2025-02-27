@@ -70,6 +70,7 @@ $reports-status: (
       background-color: rgba(fn.get-color($key), 1);
     }
 
+    // Ghrome, Safari, Opera browser
     &::-webkit-progress-bar {
       background-color: rgba(fn.get-color($key), 0.3);
       border-radius: 2px;
