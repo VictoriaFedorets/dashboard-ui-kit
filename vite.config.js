@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 export default defineConfig({
-  base: '/vite-template-sass/', // ваш базовий шлях для продакшн
+  base: './', // ваш базовий шлях для продакшн
   plugins: [
     ViteImageOptimizer({
       png: {
