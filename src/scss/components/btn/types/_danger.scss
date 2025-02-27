@@ -1,4 +1,7 @@
-@if index($btn-types, danger) {
+@use 'sass:list';
+@use '../btn' as btn;
+
+@if list.index(btn.$btn-types, danger) {
   /* == Danger == */
 
   .btn--danger {

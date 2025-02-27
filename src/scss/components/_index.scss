@@ -3,7 +3,16 @@
 @forward 'tasks';
 @forward 'reports';
 
+@forward 'btn/btn-base';
 @forward 'btn/btn';
+@forward '../components/btn/types/primary';
+@forward '../components/btn/types/secondary';
+@forward '../components/btn/types/default';
+@forward '../components/btn/types/danger';
+@forward '../components/btn/types/warning';
+@forward '../components/btn/types/success';
+@forward '../components/btn/types/info';
+@forward '../components/btn/types/frame';
 @forward 'menu';
 @forward 'logo';
 @forward 'menu-btn';

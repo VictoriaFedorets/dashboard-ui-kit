@@ -1,17 +1,21 @@
-@if index($btn-types, warning) {
+@use 'sass:list';
+@use 'sass:color';
+@use '../btn' as btn;
+
+@if list.index(btn.$btn-types, warning) {
   /* == Warning == */
 
   .btn--warning {
     background-color: #a461d8;
 
     &:active {
-      background-color: darken(#a461d8, 10%);
+      background-color: color.adjust(#a461d8, $lightness: -10%);
     }
 
     @media (hover: hover) {
       &:hover,
       &:focus {
-        background-color: lighten(#a461d8, 10%);
+        background-color: color.adjust(#a461d8, $lightness: 10%);
       }
     }
 

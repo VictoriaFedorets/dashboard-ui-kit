@@ -1,5 +1,9 @@
-@if index($btn-types, primary) {
+@use 'sass:list';
+@use '../btn' as btn;
+
+@if list.index(btn.$btn-types, 'primary') {
   /* == Primary == */
+
   .btn--primary {
     background-color: #f07f2e;
 

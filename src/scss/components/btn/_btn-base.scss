@@ -1,20 +1,22 @@
+@use './btn' as btn;
+
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: $btn-layer-spacing;
+  gap: btn.$btn-layer-spacing;
 
-  min-width: $btn-layer-min-width;
-  min-height: $btn-layer-min-height;
-  padding: $btn-padding-y $btn-padding-x;
+  min-width: btn.$btn-layer-min-width;
+  min-height: btn.$btn-layer-min-height;
+  padding: btn.$btn-padding-y btn.$btn-padding-x;
 
-  color: $btn-text-color;
-  border-radius: $btn-layer-border-radius;
+  color: btn.$btn-text-color;
+  border-radius: btn.$btn-layer-border-radius;
 
   transition-property: background-color, color, box-shadow;
   transition-duration: 300ms;
   transition-timing-function: ease;
 
-  //   Normalize for tag <button>
+  // Normalize for tag <button>
   font: inherit;
   text-decoration: none;
   background-color: transparent;
@@ -24,10 +26,10 @@
   cursor: pointer;
 
   .btn-inner {
-    font-size: $btn-text-size;
-    font-weight: $btn-text-weight;
-    line-height: calc($btn-line-height / $btn-text-size);
-    letter-spacing: #{calc($btn-text-spacing / $btn-text-size)}em;
+    font-size: btn.$btn-text-size;
+    font-weight: btn.$btn-text-weight;
+    line-height: calc(btn.$btn-line-height / btn.$btn-text-size);
+    letter-spacing: #{calc(btn.$btn-text-spacing / btn.$btn-text-size)}em;
   }
 
   .btn-icon {
