@@ -7,6 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 export default defineConfig({
+  base: '/vite-template-sass/', // ваш базовий шлях для продакшн
   plugins: [
     ViteImageOptimizer({
       png: {
@@ -22,12 +23,13 @@ export default defineConfig({
     {
       name: 'imagemin-webp',
       buildStart() {
+        // Переміщено оптимізацію зображень до етапу build
         imagemin(['./src/img/**/*.{jpg,png,jpeg}'], {
           destination: './src/img/webp/',
           plugins: [imageminWebp({ quality: 86 })],
         });
       },
-      apply: 'serve',
+      apply: 'build', // змінили 'serve' на 'build'
     },
   ],
   build: {
