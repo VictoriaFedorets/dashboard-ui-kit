@@ -1,0 +1,27 @@
+@use 'sass:list';
+@use 'sass:color';
+@use '../btn' as btn;
+
+@if list.index(btn.$btn-types, success) {
+  /* == Success == */
+
+  .btn--success {
+    background-color: #82c43c;
+
+    &:active {
+      background-color: color.adjust(#82c43c, $lightness: -10%);
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: color.adjust(#82c43c, $lightness: 10%);
+        box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
+      }
+    }
+
+    &[disabled] {
+      background-color: #b5b5be;
+    }
+  }
+}

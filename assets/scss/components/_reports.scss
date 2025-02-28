@@ -1,0 +1,107 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+$reports-status: (
+  'success': 'up',
+  'warning': 'dash',
+  'danger': 'down',
+);
+
+.reports {
+  @extend %section-frame;
+  grid-area: reports;
+  min-width: 340px;
+  background-color: fn.get-color('dark-tertiary');
+}
+
+.reports-title {
+  @extend %details;
+  margin-bottom: 36px;
+  color: fn.get-color('light-secondary');
+
+  span {
+    @extend %accent-text;
+    color: fn.get-color('light-primary');
+  }
+}
+
+.reports-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include mx.mq('md') {
+    gap: 32px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 28px;
+  }
+}
+
+.reports-staff {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.staff {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.staff-thumb {
+  @extend %details;
+}
+
+.reports-bar {
+  width: calc(100% - 224px);
+  height: 4px;
+  border-radius: 2px;
+
+  @each $key, $value in $reports-status {
+    [data-status='#{$value}'] & {
+      background-color: rgba(fn.get-color($key), 0.3);
+    }
+
+    &::-moz-progress-bar {
+      background-color: rgba(fn.get-color($key), 1);
+    }
+
+    // Ghrome, Safari, Opera browser
+    &::-webkit-progress-bar {
+      background-color: rgba(fn.get-color($key), 0.3);
+      border-radius: 2px;
+    }
+
+    &::-webkit-progress-value {
+      background-color: rgba(fn.get-color($key), 1);
+      border-radius: 2px;
+    }
+  }
+}
+
+.reports-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 4px;
+
+  use {
+    opacity: 0;
+    fill: fn.get-color('light-primary');
+  }
+
+  @each $key, $value in $reports-status {
+    [data-status='#{$value}'] & {
+      background-color: fn.get-color($key);
+
+      .#{$value} {
+        opacity: 1;
+      }
+    }
+  }
+}
