@@ -5,10 +5,10 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import glob from 'fast-glob';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import * as viteStaticCopy from 'vite-plugin-static-copy'; // Змінили на import *
+import * as viteStaticCopy from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  base: './', // Використовуємо відносні шляхи для продакшн
+  base: '/vite-template-sass/',
   plugins: [
     ViteImageOptimizer({
       png: {
@@ -29,7 +29,7 @@ export default defineConfig({
           plugins: [imageminWebp({ quality: 86 })],
         });
       },
-      apply: 'build', // змінили 'serve' на 'build'
+      apply: 'build',
     },
     viteStaticCopy.viteStaticCopy({
       targets: [
