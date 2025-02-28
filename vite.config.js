@@ -41,6 +41,10 @@ export default defineConfig({
           src: 'src/fonts/**/*',
           dest: 'assets/fonts', // копіюємо шрифти
         },
+        {
+          src: 'src/js/**/*',
+          dest: 'assets/js', // копіює JavaScript файли
+        },
       ],
     }),
   ],
