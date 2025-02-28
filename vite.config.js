@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import * as viteStaticCopy from 'vite-plugin-static-copy';
 
 export default defineConfig({
-  base: '/',
+  base: '/vite-sass-app-template/',
   plugins: [
     ViteImageOptimizer({
       png: {
