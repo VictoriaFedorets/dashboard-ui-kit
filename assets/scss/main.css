@@ -1,27 +1,31 @@
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('../fonts/Montserrat-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+    url('../fonts/Montserrat-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+    url('../fonts/Montserrat-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+    url('../fonts/Montserrat-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -35,7 +39,9 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
   all: unset;
   display: revert;
 }
@@ -99,7 +105,7 @@ textarea {
 meter {
   -webkit-appearance: revert;
   -moz-appearance: revert;
-       appearance: revert;
+  appearance: revert;
 }
 
 /* preformatted text - use only for this feature */
@@ -125,7 +131,7 @@ meter {
 /* revert for bug in Chromium browsers
    - fix for the content editable attribute will work properly.
    - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable=false])) {
+:where([contenteditable]:not([contenteditable='false'])) {
   -moz-user-modify: read-write;
   -webkit-user-modify: read-write;
   overflow-wrap: break-word;
@@ -134,7 +140,7 @@ meter {
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable=true]) {
+:where([draggable='true']) {
   -webkit-user-drag: element;
 }
 
@@ -170,7 +176,11 @@ body {
   letter-spacing: 0.03em;
 }
 
-.reports-title span, .tasks-title span, .board-caption, .co-workers-table caption span, .co-workers-title span {
+.reports-title span,
+.tasks-title span,
+.board-caption,
+.co-workers-table caption span,
+.co-workers-title span {
   font-weight: 500;
   font-size: 16px;
   font-style: normal;
@@ -178,32 +188,55 @@ body {
   letter-spacing: 0.03em;
 }
 
-.search-input, .menu-btn, .menu-link, .reports-title, .staff-thumb, .tasks-title, .tasks-heading, .tasks-desc, .board-details, .person-caption, .board-tag, .co-workers-table caption, .co-workers-table tbody, .co-workers-details, .co-workers-title {
+.search-input,
+.menu-btn,
+.menu-link,
+.reports-title,
+.staff-thumb,
+.tasks-title,
+.tasks-heading,
+.tasks-desc,
+.board-details,
+.person-caption,
+.board-tag,
+.co-workers-table caption,
+.co-workers-table tbody,
+.co-workers-details,
+.co-workers-title {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.43;
   letter-spacing: 0.04em;
 }
 
-.badge-danger, .badge-warning, .badge-succes, .co-workers-table thead th, .co-workers-position, .co-workers-accept {
+.badge-danger,
+.badge-warning,
+.badge-succes,
+.co-workers-table thead th,
+.co-workers-position,
+.co-workers-accept {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.43;
   letter-spacing: 0.04em;
 }
 
-.reports, .tasks, .board-item {
+.reports,
+.tasks,
+.board-item {
   padding: 16px;
   border-radius: 12px;
 }
 @media only screen and (min-width: 1200px) {
-  .reports, .tasks, .board-item {
+  .reports,
+  .tasks,
+  .board-item {
     padding: 24px;
   }
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #b5b5be;
   background-color: #13131a;
 }
@@ -227,7 +260,7 @@ summary {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -240,7 +273,7 @@ summary {
     display: grid;
     grid-template-columns: 248px 1fr;
     grid-template-rows: 68px 1fr;
-    grid-template-areas: "sidebar header" "sidebar main";
+    grid-template-areas: 'sidebar header' 'sidebar main';
   }
 }
 
@@ -288,21 +321,21 @@ summary {
   display: grid;
   gap: 40px;
   padding: 16px;
-  grid-template-areas: "welcome" "co-workers" "tasks" "reports";
+  grid-template-areas: 'welcome' 'co-workers' 'tasks' 'reports';
 }
 @media only screen and (min-width: 768px) {
   .main {
     gap: 36px;
     padding: 36px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "welcome welcome" "co-workers co-workers" "tasks reports";
+    grid-template-areas: 'welcome welcome' 'co-workers co-workers' 'tasks reports';
   }
 }
 @media only screen and (min-width: 1200px) {
   .main {
     grid-area: main;
     grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
-    grid-template-areas: "welcome welcome" "co-workers tasks" "co-workers reports";
+    grid-template-areas: 'welcome welcome' 'co-workers tasks' 'co-workers reports';
   }
 }
 
@@ -469,9 +502,9 @@ summary {
 }
 .co-workers-bio .thumb img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: top center;
-     object-position: top center;
+  object-position: top center;
 }
 
 .co-workers-controls {
@@ -541,7 +574,7 @@ summary {
   color: #fafafb;
 }
 .co-workers-table thead th::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -568,7 +601,7 @@ summary {
   border-bottom-width: 1px;
 }
 .co-workers-table tbody td::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -591,9 +624,9 @@ summary {
 }
 .co-workers-table .thumb img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: top center;
-     object-position: top center;
+  object-position: top center;
 }
 
 .board {
@@ -642,9 +675,9 @@ summary {
 }
 .person-thumb img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: top center;
-     object-position: top center;
+  object-position: top center;
 }
 
 .board-right {
@@ -815,7 +848,7 @@ summary {
   height: 4px;
   border-radius: 2px;
 }
-[data-status=up] .reports-bar {
+[data-status='up'] .reports-bar {
   background-color: rgba(130, 196, 60, 0.3);
 }
 .reports-bar::-moz-progress-bar {
@@ -829,7 +862,7 @@ summary {
   background-color: #82c43c;
   border-radius: 2px;
 }
-[data-status=dash] .reports-bar {
+[data-status='dash'] .reports-bar {
   background-color: rgba(164, 97, 216, 0.3);
 }
 .reports-bar::-moz-progress-bar {
@@ -843,7 +876,7 @@ summary {
   background-color: #a461d8;
   border-radius: 2px;
 }
-[data-status=down] .reports-bar {
+[data-status='down'] .reports-bar {
   background-color: rgba(252, 90, 90, 0.3);
 }
 .reports-bar::-moz-progress-bar {
@@ -869,22 +902,22 @@ summary {
   opacity: 0;
   fill: #fafafb;
 }
-[data-status=up] .reports-icon {
+[data-status='up'] .reports-icon {
   background-color: #82c43c;
 }
-[data-status=up] .reports-icon .up {
+[data-status='up'] .reports-icon .up {
   opacity: 1;
 }
-[data-status=dash] .reports-icon {
+[data-status='dash'] .reports-icon {
   background-color: #a461d8;
 }
-[data-status=dash] .reports-icon .dash {
+[data-status='dash'] .reports-icon .dash {
   opacity: 1;
 }
-[data-status=down] .reports-icon {
+[data-status='down'] .reports-icon {
   background-color: #fc5a5a;
 }
-[data-status=down] .reports-icon .down {
+[data-status='down'] .reports-icon .down {
   opacity: 1;
 }
 
@@ -926,7 +959,8 @@ summary {
   background-color: #d14a00;
 }
 @media (hover: hover) {
-  .btn--primary:hover, .btn--primary:focus {
+  .btn--primary:hover,
+  .btn--primary:focus {
     background-color: #f15c27;
     box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
   }
@@ -940,7 +974,8 @@ summary {
   color: #d14a00;
 }
 @media (hover: hover) {
-  .btn--secondary:hover, .btn--secondary:focus {
+  .btn--secondary:hover,
+  .btn--secondary:focus {
     color: #f15c27;
     box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
   }
@@ -957,7 +992,8 @@ summary {
   color: #777785;
 }
 @media (hover: hover) {
-  .btn--default:hover, .btn--default:focus {
+  .btn--default:hover,
+  .btn--default:focus {
     background-color: #adadb5;
   }
 }
@@ -973,7 +1009,8 @@ summary {
   background-color: #d14a00;
 }
 @media (hover: hover) {
-  .btn--danger:hover, .btn--danger:focus {
+  .btn--danger:hover,
+  .btn--danger:focus {
     background-color: #f15c27;
     box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
   }
@@ -990,7 +1027,8 @@ summary {
   background-color: #8c38ce;
 }
 @media (hover: hover) {
-  .btn--warning:hover, .btn--warning:focus {
+  .btn--warning:hover,
+  .btn--warning:focus {
     background-color: #bc8ae2;
   }
 }
@@ -1006,7 +1044,8 @@ summary {
   background-color: #689d30;
 }
 @media (hover: hover) {
-  .btn--success:hover, .btn--success:focus {
+  .btn--success:hover,
+  .btn--success:focus {
     background-color: #9bd063;
     box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
   }
@@ -1023,7 +1062,8 @@ summary {
   background-color: #1b4dff;
 }
 @media (hover: hover) {
-  .btn--info:hover, .btn--info:focus {
+  .btn--info:hover,
+  .btn--info:focus {
     background-color: #819dff;
     box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
   }
@@ -1040,7 +1080,8 @@ summary {
   border-color: #d14a00;
 }
 @media (hover: hover) {
-  .btn--frame:hover, .btn--frame:focus {
+  .btn--frame:hover,
+  .btn--frame:focus {
     border-color: #f15c27;
   }
 }
@@ -1083,14 +1124,15 @@ summary {
   gap: 24px;
   padding: 16px 20px;
 }
-.menu-link:hover, .menu-link:focus {
+.menu-link:hover,
+.menu-link:focus {
   color: #fafafb;
 }
 .menu-link.current {
   color: #fafafb;
 }
 .menu-link.current::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 0;
@@ -1182,7 +1224,7 @@ summary {
   fill: currentColor;
 }
 .notification-btn::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -1192,7 +1234,7 @@ summary {
   border-radius: 50%;
   background-color: #f07f2e;
 }
-.notification-btn[data-notify=true]::after {
+.notification-btn[data-notify='true']::after {
   background-color: #fc5a5a;
 }
 
@@ -1269,4 +1311,4 @@ summary {
   text-align: center;
   color: #fafafb;
   border-radius: 20px;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
